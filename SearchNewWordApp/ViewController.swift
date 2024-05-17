@@ -83,6 +83,7 @@ class SearchNewWordViewController: UIViewController {
         searchButton.tintColor = .white
         
         // descriptionLabel
+        descriptionLabel.text = "뜻이 궁금한 신조어를 입력해보세요!"
         descriptionLabel.textColor = .black
         descriptionLabel.font = .boldSystemFont(ofSize: 18)
         descriptionLabel.textAlignment = .center
