@@ -151,9 +151,63 @@ class SearchNewWordViewController: UIViewController {
         newWordButton5.setTitle("\(shuffledKeys[4])", for: .normal)
     }
     
+    @IBAction func firstButtonClicked(_ sender: UIButton) {
+        guard let newWord = newWordButton1.titleLabel?.text else { return }
+        searchTextField.text = newWord
+        
+        let value = newWordList[newWord]
+        descriptionLabel.text = value
+        searchTextField.endEditing(true)
+        showButtonTitle()
+    }
+    
+    @IBAction func secondButtonClicked(_ sender: UIButton) {
+        guard let newWord = newWordButton2.titleLabel?.text else { return }
+        searchTextField.text = newWord
+        
+        let value = newWordList[newWord]
+        descriptionLabel.text = value
+        searchTextField.endEditing(true)
+        showButtonTitle()
+    }
+    
+    @IBAction func thirdButtonClicked(_ sender: UIButton) {
+        guard let newWord = newWordButton3.titleLabel?.text else { return }
+        searchTextField.text = newWord
+        
+        let value = newWordList[newWord]
+        descriptionLabel.text = value
+        searchTextField.endEditing(true)
+        showButtonTitle()
+    }
+    
+    @IBAction func forthButtonClicked(_ sender: UIButton) {
+        guard let newWord = newWordButton4.titleLabel?.text else { return }
+        searchTextField.text = newWord
+        
+        let value = newWordList[newWord]
+        descriptionLabel.text = value
+        searchTextField.endEditing(true)
+        showButtonTitle()
+    }
+    
+    @IBAction func fifthButtonClicked(_ sender: UIButton) {
+        guard let newWord = newWordButton5.titleLabel?.text else { return }
+        searchTextField.text = newWord
+        
+        let value = newWordList[newWord]
+        descriptionLabel.text = value
+        searchTextField.endEditing(true)
+        showButtonTitle()
+    }
+    
+    @IBAction func textFieldClicked(_ sender: UITextField) {
+        searchTextField.text = ""
+    }
+
     @IBAction func didEndtextField(_ sender: UITextField) {
         
     }
-    
+
 }
 
