@@ -13,13 +13,13 @@ class SearchNewWordViewController: UIViewController {
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var searchButton: UIButton!
     
-    @IBOutlet var descriptionLabel: UILabel!
-    
     @IBOutlet var newWordButton1: UIButton!
     @IBOutlet var newWordButton2: UIButton!
     @IBOutlet var newWordButton3: UIButton!
     @IBOutlet var newWordButton5: UIButton!
     @IBOutlet var newWordButton4: UIButton!
+    
+    @IBOutlet var descriptionLabel: UILabel!
     
     let newWordList: [String: String] = [
       "모에모에쿵": "음식이 맛있어지는 주문",
@@ -34,7 +34,7 @@ class SearchNewWordViewController: UIViewController {
       "핑프": "핑거 프린세스",
       "박박": "대박 + 대박 최고라는 의미",
       "좋댓구알": "좋아요, 댓글, 구독, 알림설정",
-      "꾸꾸꾸": "꾸며도 꾸면도 꾸질꾸질",
+      "꾸꾸꾸": "꾸며도 꾸며도 꾸질꾸질",
       "하남자": "상남자의 반대말",
       "구취": "구독 취소",
       "돼지런하다": "돼지 + 부지런하다 = 먹을 때 부지런하다",
@@ -52,10 +52,8 @@ class SearchNewWordViewController: UIViewController {
     func showButtonTitle() {
         var shuffledKeys: [String] = []
         
-           for (key, _) in newWordList {
-               shuffledKeys.append(key)
-               shuffledKeys.shuffle()
-            }
+        let shuffledWordList = newWordList.keys.shuffled()
+        shuffledKeys = shuffledWordList
         
         newWordButton1.setTitle("\(shuffledKeys[0])", for: .normal)
         newWordButton2.setTitle("\(shuffledKeys[1])", for: .normal)
@@ -124,10 +122,12 @@ class SearchNewWordViewController: UIViewController {
     }
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
-        let key = searchTextField.text ?? ""
+        guard let key = searchTextField.text else { return }
         
         if let value = newWordList[key] {
             descriptionLabel.text = value
+        } else if key == "" {
+            descriptionLabel.text = "일치하는 신조어가 없습니다."
         } else {
             descriptionLabel.text = "일치하는 신조어가 없습니다."
         }
@@ -136,10 +136,8 @@ class SearchNewWordViewController: UIViewController {
         
         var shuffledKeys: [String] = []
         
-        for (key, _) in newWordList {
-            shuffledKeys.append(key)
-            shuffledKeys.shuffle()
-         }
+        let shuffledWordList = newWordList.keys.shuffled()
+        shuffledKeys = shuffledWordList
         
         newWordButton1.setTitle("\(shuffledKeys[0])", for: .normal)
         newWordButton2.setTitle("\(shuffledKeys[1])", for: .normal)
