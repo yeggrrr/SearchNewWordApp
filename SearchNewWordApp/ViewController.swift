@@ -52,12 +52,10 @@ class SearchNewWordViewController: UIViewController {
     func showButtonTitle() {
         var shuffledKeys: [String] = []
         
-        while shuffledKeys.count < 5 {
            for (key, _) in newWordList {
                shuffledKeys.append(key)
                shuffledKeys.shuffle()
             }
-        }
         
         newWordButton1.setTitle("\(shuffledKeys[0])", for: .normal)
         newWordButton2.setTitle("\(shuffledKeys[1])", for: .normal)
@@ -138,12 +136,10 @@ class SearchNewWordViewController: UIViewController {
         
         var shuffledKeys: [String] = []
         
-        while shuffledKeys.count < 5 {
-           for (key, _) in newWordList {
-               shuffledKeys.append(key)
-               shuffledKeys.shuffle()
-            }
-        }
+        for (key, _) in newWordList {
+            shuffledKeys.append(key)
+            shuffledKeys.shuffle()
+         }
         
         newWordButton1.setTitle("\(shuffledKeys[0])", for: .normal)
         newWordButton2.setTitle("\(shuffledKeys[1])", for: .normal)
@@ -209,6 +205,5 @@ class SearchNewWordViewController: UIViewController {
     @IBAction func didEndtextField(_ sender: UITextField) {
         
     }
-
 }
 
