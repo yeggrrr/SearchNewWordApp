@@ -19,11 +19,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSZ-Bk-VFo">
                                 <rect key="frame" x="10" y="69" width="373" height="50"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h3t-5c-w5d" userLabel="textField StackView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h3t-5c-w5d" userLabel="textField StackView">
                                         <rect key="frame" x="5" y="5" width="363" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89B-d7-5Of">
-                                                <rect key="frame" x="0.0" y="0.0" width="307" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="312" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -70,31 +70,31 @@
                                     <constraint firstAttribute="bottom" secondItem="NLk-7E-Tje" secondAttribute="bottom" id="yt8-86-h6V"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-Gw-7BD" userLabel="Button Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-Gw-7BD" userLabel="Button Stack View">
                                 <rect key="frame" x="5" y="127" width="383" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oD4-oG-XEi">
-                                        <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75.666666666666671" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eP-t5-8LJ">
-                                        <rect key="frame" x="76.666666666666657" y="0.0" width="76.666666666666657" height="30"/>
+                                        <rect key="frame" x="76.666666666666671" y="0.0" width="76.000000000000014" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zum-3q-LRg">
-                                        <rect key="frame" x="153.33333333333334" y="0.0" width="76.333333333333343" height="30"/>
+                                        <rect key="frame" x="153.66666666666666" y="0.0" width="75.666666666666657" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-mW-2wg">
-                                        <rect key="frame" x="229.66666666666666" y="0.0" width="76.666666666666657" height="30"/>
+                                        <rect key="frame" x="230.33333333333337" y="0.0" width="76" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bz-ez-Zq7">
-                                        <rect key="frame" x="306.33333333333331" y="0.0" width="76.666666666666686" height="30"/>
+                                        <rect key="frame" x="307.33333333333331" y="0.0" width="75.666666666666686" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                     </button>
@@ -115,6 +115,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OSZ-Bk-VFo" secondAttribute="trailing" constant="10" id="ujc-qb-W7w"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="PDA-HM-u75" id="u5q-Go-v53"/>
+                        <outlet property="newWordButton1" destination="oD4-oG-XEi" id="5at-we-GFs"/>
+                        <outlet property="newWordButton2" destination="3eP-t5-8LJ" id="HKN-Gy-6SB"/>
+                        <outlet property="newWordButton3" destination="Zum-3q-LRg" id="OpC-ZV-grH"/>
+                        <outlet property="newWordButton4" destination="Rmb-mW-2wg" id="21U-is-wSo"/>
+                        <outlet property="newWordButton5" destination="9Bz-ez-Zq7" id="VMx-Id-b1h"/>
+                        <outlet property="searchButton" destination="cti-Xi-gZc" id="bwp-TH-tax"/>
+                        <outlet property="searchTextField" destination="89B-d7-5Of" id="YKA-zu-N4q"/>
+                        <outlet property="textFieldView" destination="OSZ-Bk-VFo" id="dgu-Xh-KzH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
