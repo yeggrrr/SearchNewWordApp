@@ -88,37 +88,47 @@ class SearchNewWordViewController: UIViewController {
         // newWordButton1
         newWordButton1.setTitle("1", for: .normal)
         newWordButton1.tintColor = .black
-        newWordButton1.titleLabel?.font = .systemFont(ofSize: 11)
-        newWordButton1.backgroundColor = .lightGray
+        newWordButton1.titleLabel?.font = .systemFont(ofSize: 12)
+        newWordButton1.backgroundColor = .clear
         newWordButton1.layer.cornerRadius = 5
+        newWordButton1.layer.borderWidth = 1.5
+        newWordButton1.layer.borderColor = UIColor.black.cgColor
         
         // newWordButton2
         newWordButton2.setTitle("2", for: .normal)
         newWordButton2.tintColor = .black
-        newWordButton2.titleLabel?.font = .systemFont(ofSize: 11)
-        newWordButton2.backgroundColor = .lightGray
+        newWordButton2.titleLabel?.font = .systemFont(ofSize: 12)
+        newWordButton2.backgroundColor = .clear
         newWordButton2.layer.cornerRadius = 5
+        newWordButton2.layer.borderWidth = 1.5
+        newWordButton2.layer.borderColor = UIColor.black.cgColor
         
         // newWordButton3
         newWordButton3.setTitle("3", for: .normal)
         newWordButton3.tintColor = .black
-        newWordButton3.titleLabel?.font = .systemFont(ofSize: 11)
-        newWordButton3.backgroundColor = .lightGray
+        newWordButton3.titleLabel?.font = .systemFont(ofSize: 12)
+        newWordButton3.backgroundColor = .clear
         newWordButton3.layer.cornerRadius = 5
+        newWordButton3.layer.borderWidth = 1.5
+        newWordButton3.layer.borderColor = UIColor.black.cgColor
         
         // newWordButton4
         newWordButton4.setTitle("4", for: .normal)
         newWordButton4.tintColor = .black
-        newWordButton4.titleLabel?.font = .systemFont(ofSize: 11)
-        newWordButton4.backgroundColor = .lightGray
+        newWordButton4.titleLabel?.font = .systemFont(ofSize: 12)
+        newWordButton4.backgroundColor = .clear
         newWordButton4.layer.cornerRadius = 5
+        newWordButton4.layer.borderWidth = 1.5
+        newWordButton4.layer.borderColor = UIColor.black.cgColor
         
         // newWordButton5
         newWordButton5.setTitle("5", for: .normal)
         newWordButton5.tintColor = .black
         newWordButton5.titleLabel?.font = .systemFont(ofSize: 12)
-        newWordButton5.backgroundColor = .lightGray
+        newWordButton5.backgroundColor = .clear
         newWordButton5.layer.cornerRadius = 5
+        newWordButton5.layer.borderWidth = 1.5
+        newWordButton5.layer.borderColor = UIColor.black.cgColor
     }
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
