@@ -9,6 +9,9 @@ import UIKit
 
 class SearchNewWordViewController: UIViewController {
 
+    
+    @IBOutlet var addBarButtonItem: UIBarButtonItem!
+    
     @IBOutlet var textFieldView: UIView!
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var searchButton: UIButton!
@@ -64,8 +67,14 @@ class SearchNewWordViewController: UIViewController {
     
     func configureUI() {
         
+        title = "신조어 검색"
+        
         // textFieldView
         textFieldView.backgroundColor = .black
+        
+        // addBarButtonItem
+        addBarButtonItem.image = UIImage(systemName: "plus")
+        addBarButtonItem.tintColor = .black
         
         // searchTextField
         searchTextField.placeholder = "신조어를 입력해주세요."
