@@ -46,8 +46,26 @@ class SearchNewWordViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+        showButtonTitle()
     }
 
+    func showButtonTitle() {
+        var shuffledKeys: [String] = []
+        
+        while shuffledKeys.count < 5 {
+           for (key, value) in newWordList {
+               shuffledKeys.append(key)
+               shuffledKeys.shuffle()
+            }
+        }
+        
+        newWordButton1.setTitle("\(shuffledKeys[0])", for: .normal)
+        newWordButton2.setTitle("\(shuffledKeys[1])", for: .normal)
+        newWordButton3.setTitle("\(shuffledKeys[2])", for: .normal)
+        newWordButton4.setTitle("\(shuffledKeys[3])", for: .normal)
+        newWordButton5.setTitle("\(shuffledKeys[4])", for: .normal)
+    }
+    
     func configureUI() {
         
         // textFieldView
@@ -116,6 +134,21 @@ class SearchNewWordViewController: UIViewController {
         }
         
         searchTextField.endEditing(true)
+        
+        var shuffledKeys: [String] = []
+        
+        while shuffledKeys.count < 5 {
+           for (key, value) in newWordList {
+               shuffledKeys.append(key)
+               shuffledKeys.shuffle()
+            }
+        }
+        
+        newWordButton1.setTitle("\(shuffledKeys[0])", for: .normal)
+        newWordButton2.setTitle("\(shuffledKeys[1])", for: .normal)
+        newWordButton3.setTitle("\(shuffledKeys[2])", for: .normal)
+        newWordButton4.setTitle("\(shuffledKeys[3])", for: .normal)
+        newWordButton5.setTitle("\(shuffledKeys[4])", for: .normal)
     }
     
     @IBAction func didEndtextField(_ sender: UITextField) {
