@@ -112,6 +112,12 @@ class AddNewWordViewController: UIViewController {
         descriptionTextField.endEditing(true)
     }
     
+    @IBAction func newWordTextDoneButtonClicked(_ sender: UITextField) {
+    }
+    
+    @IBAction func descriptionTextFieldDoneButtonClicked(_ sender: UITextField) {
+    }
+    
     @IBAction func exitButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true)
     }

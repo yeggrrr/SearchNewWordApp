@@ -188,6 +188,9 @@
                                 <rect key="frame" x="10" y="132" width="373" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="newWordTextDoneButtonClicked:" destination="6cH-bo-pxb" eventType="editingDidEndOnExit" id="QRJ-CS-G3a"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL4-Db-Iil">
                                 <rect key="frame" x="20" y="181" width="353" height="21"/>
@@ -199,6 +202,9 @@
                                 <rect key="frame" x="10" y="212" width="373" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="descriptionTextFieldDoneButtonClicked:" destination="6cH-bo-pxb" eventType="editingDidEndOnExit" id="cl2-st-hkM"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2K-bd-hp0">
                                 <rect key="frame" x="100" y="266" width="193" height="35"/>

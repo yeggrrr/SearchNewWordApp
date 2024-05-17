@@ -59,7 +59,7 @@ class SearchNewWordViewController: UIViewController {
         // searchTextField
         searchTextField.placeholder = "신조어를 입력해주세요."
         searchTextField.tintColor = .black
-        searchTextField.keyboardType = .default
+        searchTextField.keyboardType = .asciiCapable
         searchTextField.returnKeyType = .default
         
         // searchButton
