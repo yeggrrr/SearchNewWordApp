@@ -8,7 +8,6 @@
 import UIKit
 
 class AddNewWordViewController: UIViewController {
-
     
     @IBOutlet var exitButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
@@ -22,7 +21,6 @@ class AddNewWordViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
-
     }
     
     func configureUI() {
@@ -85,7 +83,18 @@ class AddNewWordViewController: UIViewController {
         addButton.layer.borderColor = UIColor.white.cgColor
         
     }
-
+    
+    @IBAction func addButtonClicked(_ sender: UIButton) {
+        
+        guard let newWord = self.newWorldTextField.text else { return }
+        guard let newDescription = self.descriptionTextField.text else { return }
+        
+        DataStorage.shared.newWordList[newWord] = newDescription
+  
+        newWorldTextField.text = ""
+        descriptionTextField.text = ""
+    }
+    
     @IBAction func exitButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true)
     }

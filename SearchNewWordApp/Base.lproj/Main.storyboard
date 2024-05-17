@@ -204,6 +204,9 @@
                                 <rect key="frame" x="100" y="266" width="193" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="addButtonClicked:" destination="6cH-bo-pxb" eventType="touchUpInside" id="c3x-9b-c57"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zV-3o-JQF">
                                 <rect key="frame" x="344" y="10" width="39" height="22"/>
@@ -242,7 +245,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="D2K-bd-hp0" id="j4u-07-6D3"/>
-                        <outlet property="descriptionLabel" destination="TL4-Db-Iil" id="b9t-Re-LkA"/>
+                        <outlet property="descriptionLabel" destination="TL4-Db-Iil" id="7Ss-22-Ogp"/>
                         <outlet property="descriptionTextField" destination="WD1-9J-aZv" id="IQq-7Z-l1R"/>
                         <outlet property="exitButton" destination="0zV-3o-JQF" id="UZy-QK-8qF"/>
                         <outlet property="newWordLabel" destination="3Dg-nE-QHK" id="Ycs-LN-WlG"/>
