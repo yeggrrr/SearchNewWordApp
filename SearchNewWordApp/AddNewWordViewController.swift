@@ -81,7 +81,6 @@ class AddNewWordViewController: UIViewController {
         addButton.layer.cornerRadius = 5
         addButton.layer.borderWidth = 1.5
         addButton.layer.borderColor = UIColor.white.cgColor
-        
     }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
@@ -89,10 +88,28 @@ class AddNewWordViewController: UIViewController {
         guard let newWord = self.newWorldTextField.text else { return }
         guard let newDescription = self.descriptionTextField.text else { return }
         
-        DataStorage.shared.newWordList[newWord] = newDescription
-  
+        if newWord.count >= 1 && newDescription.count >= 1 {
+            DataStorage.shared.newWordList[newWord] = newDescription
+            
+            let alert = UIAlertController(title: "\(newWord): \(newDescription)", message: "추가되었습니다!", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
+            
+            alert.addAction(okButton)
+            
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "추가할 신조어를 입력해주세요!", message: "", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
+            
+            alert.addAction(okButton)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         newWorldTextField.text = ""
         descriptionTextField.text = ""
+        newWorldTextField.endEditing(true)
+        descriptionTextField.endEditing(true)
     }
     
     @IBAction func exitButtonClicked(_ sender: UIButton) {
