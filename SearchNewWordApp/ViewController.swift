@@ -21,6 +21,27 @@ class SearchNewWordViewController: UIViewController {
     @IBOutlet var newWordButton5: UIButton!
     @IBOutlet var newWordButton4: UIButton!
     
+    let newWordList: [String: String] = [
+      "모에모에쿵": "음식이 맛있어지는 주문",
+      "빠태": "빠른 태세전환",
+      "완내스": "완전 내 스타일",
+      "무물보": "무엇이든 물어보세요",
+      "스불재": "스스로 불러온 재앙",
+      "당모치": "당연히 모든 치킨은 옳다",
+      "너또다": "너 또라이라 다행이다",
+      "상사병": "상사 때문에 얻는 홧병",
+      "희연사": "희귀 연예인 사진",
+      "핑프": "핑거 프린세스",
+      "박박": "대박 + 대박 최고라는 의미",
+      "좋댓구알": "좋아요, 댓글, 구독, 알림설정",
+      "꾸꾸꾸": "꾸며도 꾸면도 꾸질꾸질",
+      "하남자": "상남자의 반대말",
+      "구취": "구독 취소",
+      "돼지런하다": "돼지 + 부지런하다 = 먹을 때 부지런하다",
+      "분조장": "분노조절장애",
+      "마해자": "마스크에 미모가 가려진 사람"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +68,7 @@ class SearchNewWordViewController: UIViewController {
         descriptionLabel.textColor = .black
         descriptionLabel.font = .boldSystemFont(ofSize: 18)
         descriptionLabel.textAlignment = .center
+        descriptionLabel.numberOfLines = 0
         
         // newWordButton1
         newWordButton1.setTitle("1", for: .normal)
@@ -84,9 +106,21 @@ class SearchNewWordViewController: UIViewController {
         newWordButton5.layer.cornerRadius = 5
     }
     
+    @IBAction func searchButtonClicked(_ sender: UIButton) {
+        let key = searchTextField.text ?? ""
+        
+        if let value = newWordList[key] {
+            descriptionLabel.text = value
+        } else {
+            descriptionLabel.text = "일치하는 신조어가 없습니다."
+        }
+        
+        searchTextField.endEditing(true)
+    }
     
+    @IBAction func didEndtextField(_ sender: UITextField) {
+        
+    }
     
-    
-
 }
 
