@@ -53,7 +53,7 @@ class SearchNewWordViewController: UIViewController {
         var shuffledKeys: [String] = []
         
         while shuffledKeys.count < 5 {
-           for (key, value) in newWordList {
+           for (key, _) in newWordList {
                shuffledKeys.append(key)
                shuffledKeys.shuffle()
             }
@@ -138,7 +138,7 @@ class SearchNewWordViewController: UIViewController {
         var shuffledKeys: [String] = []
         
         while shuffledKeys.count < 5 {
-           for (key, value) in newWordList {
+           for (key, _) in newWordList {
                shuffledKeys.append(key)
                shuffledKeys.shuffle()
             }
