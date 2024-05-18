@@ -59,7 +59,7 @@ class SearchNewWordViewController: UIViewController {
         // searchTextField
         searchTextField.placeholder = "신조어를 입력해주세요."
         searchTextField.tintColor = .black
-        searchTextField.keyboardType = .asciiCapable
+        searchTextField.keyboardType = .default
         searchTextField.returnKeyType = .default
         
         // searchButton
@@ -126,7 +126,7 @@ class SearchNewWordViewController: UIViewController {
         if let value = DataStorage.shared.newWordList[key] {
             descriptionLabel.text = value
         } else if key == "" {
-            descriptionLabel.text = "일치하는 신조어가 없습니다."
+            descriptionLabel.text = "뜻이 궁금한 신조어를 입력해보세요!"
         } else {
             descriptionLabel.text = "일치하는 신조어가 없습니다."
         }
