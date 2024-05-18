@@ -52,13 +52,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcr-hP-a1s">
-                                <rect key="frame" x="0.0" y="278" width="393" height="500"/>
+                                <rect key="frame" x="0.0" y="201" width="393" height="617"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="NLk-7E-Tje">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="500"/>
+                                        <rect key="frame" x="0.0" y="98.333333333333343" width="393" height="420.33333333333326"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDA-HM-u75">
-                                        <rect key="frame" x="40" y="200" width="313" height="100"/>
+                                        <rect key="frame" x="40" y="298.33333333333331" width="313" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -67,14 +67,12 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="PDA-HM-u75" firstAttribute="bottom" secondItem="NLk-7E-Tje" secondAttribute="bottom" constant="-200" id="4m9-He-ofn"/>
-                                    <constraint firstItem="NLk-7E-Tje" firstAttribute="top" secondItem="Gcr-hP-a1s" secondAttribute="top" id="GOL-sV-vNF"/>
                                     <constraint firstItem="PDA-HM-u75" firstAttribute="trailing" secondItem="NLk-7E-Tje" secondAttribute="trailing" constant="-40" id="PsG-Is-sx1"/>
+                                    <constraint firstItem="NLk-7E-Tje" firstAttribute="centerY" secondItem="Gcr-hP-a1s" secondAttribute="centerY" id="Upl-Bo-uqt"/>
                                     <constraint firstItem="PDA-HM-u75" firstAttribute="leading" secondItem="NLk-7E-Tje" secondAttribute="leading" constant="40" id="jgm-tP-XFz"/>
                                     <constraint firstItem="NLk-7E-Tje" firstAttribute="leading" secondItem="Gcr-hP-a1s" secondAttribute="leading" id="kWL-u1-kjy"/>
-                                    <constraint firstAttribute="height" constant="500" id="mbh-7s-x9y"/>
                                     <constraint firstItem="PDA-HM-u75" firstAttribute="top" secondItem="NLk-7E-Tje" secondAttribute="top" constant="200" id="nFJ-12-v7K"/>
                                     <constraint firstAttribute="trailing" secondItem="NLk-7E-Tje" secondAttribute="trailing" id="q8r-Ae-8Bp"/>
-                                    <constraint firstAttribute="bottom" secondItem="NLk-7E-Tje" secondAttribute="bottom" id="yt8-86-h6V"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-Gw-7BD" userLabel="Button Stack View">
@@ -133,8 +131,9 @@
                             <constraint firstItem="OSZ-Bk-VFo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Nf5-Ge-y6E"/>
                             <constraint firstItem="Gcr-hP-a1s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ONV-Js-nj2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WM0-Gw-7BD" secondAttribute="trailing" constant="5" id="RLv-uE-nnm"/>
+                            <constraint firstItem="Gcr-hP-a1s" firstAttribute="top" secondItem="WM0-Gw-7BD" secondAttribute="bottom" id="Scc-T1-lZk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gcr-hP-a1s" secondAttribute="trailing" id="Xns-7O-TaU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gcr-hP-a1s" secondAttribute="bottom" constant="40" id="ZQn-3f-y0R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gcr-hP-a1s" secondAttribute="bottom" id="ZQn-3f-y0R"/>
                             <constraint firstItem="WM0-Gw-7BD" firstAttribute="top" secondItem="OSZ-Bk-VFo" secondAttribute="bottom" constant="8.0000000000000284" id="ktg-K3-szv"/>
                             <constraint firstItem="WM0-Gw-7BD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="p3C-bT-Fuk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OSZ-Bk-VFo" secondAttribute="trailing" constant="5" id="ujc-qb-W7w"/>
