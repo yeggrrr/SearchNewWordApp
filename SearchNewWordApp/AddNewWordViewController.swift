@@ -14,7 +14,7 @@ class AddNewWordViewController: UIViewController {
     @IBOutlet var newWordLabel: UILabel!
     @IBOutlet var newWorldTextField: UITextField!
     @IBOutlet var descriptionLabel: UILabel!
-    @IBOutlet var descriptionTextField: UITextField!
+    @IBOutlet var newDescriptionTextField: UITextField!
     @IBOutlet var addButton: UIButton!
     
     override func viewDidLoad() {
@@ -27,51 +27,18 @@ class AddNewWordViewController: UIViewController {
         
         view.backgroundColor = .systemGray
         
+        // labelUI
+        labelUI(titleLabel, "신조어 추가하기", .center, 20)
+        labelUI(newWordLabel, "신조어", .left, 17)
+        labelUI(descriptionLabel, "의미", .left, 17)
+        
+        // textFieldUI
+        textFieldUI(newWorldTextField, "띄어쓰기 없이 입력해주세요.")
+        textFieldUI(newDescriptionTextField, "신조어 뜻을 입력해주세요.")
+        
         // exitButton
         exitButton.setImage(UIImage(systemName: "xmark"), for: .normal)
         exitButton.tintColor = .black
-        
-        // titleLabel
-        titleLabel.text = "신조어 추가하기"
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = .black
-        titleLabel.font = .boldSystemFont(ofSize: 20)
-        
-        // newWordLabel
-        newWordLabel.text = "신조어"
-        newWordLabel.textAlignment = .left
-        newWordLabel.textColor = .black
-        newWordLabel.font = .boldSystemFont(ofSize: 17)
-        
-        // newWorldTextField
-        newWorldTextField.attributedPlaceholder = NSAttributedString(
-            string: "띄어쓰기 없이 입력해주세요.",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        newWorldTextField.tintColor = .white
-        newWorldTextField.textColor = .white
-        newWorldTextField.backgroundColor = .darkGray
-        newWorldTextField.keyboardType = .default
-        newWorldTextField.returnKeyType = .done
-        newWorldTextField.keyboardAppearance = .dark
-        
-        // descriptionLabel
-        descriptionLabel.text = "의미"
-        descriptionLabel.textAlignment = .left
-        descriptionLabel.textColor = .black
-        descriptionLabel.font = .boldSystemFont(ofSize: 17)
-        
-        // descriptionTextField
-        descriptionTextField.attributedPlaceholder = NSAttributedString(
-            string: "신조어 뜻을 입력해주세요.",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
-        )
-        descriptionTextField.tintColor = .white
-        descriptionTextField.textColor = .white
-        descriptionTextField.backgroundColor = .darkGray
-        descriptionTextField.keyboardType = .default
-        descriptionTextField.returnKeyType = .done
-        descriptionTextField.keyboardAppearance = .dark
         
         // addButton
         addButton.setTitle("추가", for: .normal)
@@ -83,33 +50,53 @@ class AddNewWordViewController: UIViewController {
         addButton.layer.borderColor = UIColor.white.cgColor
     }
     
+    func labelUI(_ label: UILabel, _ text: String, _ alignment: NSTextAlignment, _ fontSize: CGFloat ) {
+        label.text = text
+        label.textAlignment = alignment
+        label.textColor = .black
+        label.font = .boldSystemFont(ofSize: fontSize)
+    }
+    
+    func textFieldUI(_ textfield: UITextField, _ string: String) {
+        textfield.attributedPlaceholder = NSAttributedString(
+            string: string,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
+        )
+        textfield.tintColor = .white
+        textfield.textColor = .white
+        textfield.backgroundColor = .darkGray
+        textfield.keyboardType = .default
+        textfield.returnKeyType = .done
+        textfield.keyboardAppearance = .dark
+    }
+    
+    func alert(_ title: String, _ message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
+        
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func addButtonClicked(_ sender: UIButton) {
         
         guard let newWord = self.newWorldTextField.text else { return }
-        guard let newDescription = self.descriptionTextField.text else { return }
+        guard let newDescription = self.newDescriptionTextField.text else { return }
         
         if newWord.count >= 1 && newDescription.count >= 1 {
             DataStorage.shared.newWordList[newWord] = newDescription
             
-            let alert = UIAlertController(title: "\(newWord): \(newDescription)", message: "추가되었습니다!", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
-            
-            alert.addAction(okButton)
-            
-            self.present(alert, animated: true, completion: nil)
+            alert("\(newWord): \(newDescription)", "추가되었습니다!")
+ 
         } else {
-            let alert = UIAlertController(title: "추가할 신조어를 입력해주세요!", message: "", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "확인", style: .default, handler: nil)
             
-            alert.addAction(okButton)
-            
-            self.present(alert, animated: true, completion: nil)
+            alert("추가할 신조어를 입력해주세요!", "")
         }
         
         newWorldTextField.text = ""
-        descriptionTextField.text = ""
         newWorldTextField.endEditing(true)
-        descriptionTextField.endEditing(true)
+        newDescriptionTextField.text = ""
+        newDescriptionTextField.endEditing(true)
     }
     
     @IBAction func newWordTextDoneButtonClicked(_ sender: UITextField) {

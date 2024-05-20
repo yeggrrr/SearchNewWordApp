@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O30-dC-6vs">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -83,39 +83,39 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="firstButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Py6-Qr-hvf"/>
+                                            <action selector="buttonsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bjc-Uz-IbM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eP-t5-8LJ">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eP-t5-8LJ">
                                         <rect key="frame" x="75.333333333333329" y="0.0" width="66.999999999999986" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="secondButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jjh-YZ-T98"/>
+                                            <action selector="buttonsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h4d-e5-a9R"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zum-3q-LRg">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zum-3q-LRg">
                                         <rect key="frame" x="150.33333333333334" y="0.0" width="67.333333333333343" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="thirdButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oax-JY-odi"/>
+                                            <action selector="buttonsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZZE-7L-0EO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-mW-2wg">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-mW-2wg">
                                         <rect key="frame" x="225.66666666666666" y="0.0" width="67.333333333333343" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="forthButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ys-h8-3Fn"/>
+                                            <action selector="buttonsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IJK-it-Ouz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bz-ez-Zq7">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bz-ez-Zq7">
                                         <rect key="frame" x="301" y="0.0" width="82" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
-                                            <action selector="fifthButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mEs-iu-3wb"/>
+                                            <action selector="buttonsClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dvy-6T-7pA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -157,6 +157,11 @@
                         <outlet property="searchButton" destination="cti-Xi-gZc" id="bwp-TH-tax"/>
                         <outlet property="searchTextField" destination="89B-d7-5Of" id="YKA-zu-N4q"/>
                         <outlet property="textFieldView" destination="OSZ-Bk-VFo" id="dgu-Xh-KzH"/>
+                        <outletCollection property="buttonsList" destination="oD4-oG-XEi" collectionClass="NSMutableArray" id="hlu-O7-3ej"/>
+                        <outletCollection property="buttonsList" destination="3eP-t5-8LJ" collectionClass="NSMutableArray" id="bGf-iq-8XX"/>
+                        <outletCollection property="buttonsList" destination="Zum-3q-LRg" collectionClass="NSMutableArray" id="GRG-TX-KJz"/>
+                        <outletCollection property="buttonsList" destination="Rmb-mW-2wg" collectionClass="NSMutableArray" id="PMo-Ow-y3E"/>
+                        <outletCollection property="buttonsList" destination="9Bz-ez-Zq7" collectionClass="NSMutableArray" id="b41-X3-HXk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -251,8 +256,8 @@
                     <connections>
                         <outlet property="addButton" destination="D2K-bd-hp0" id="j4u-07-6D3"/>
                         <outlet property="descriptionLabel" destination="TL4-Db-Iil" id="7Ss-22-Ogp"/>
-                        <outlet property="descriptionTextField" destination="WD1-9J-aZv" id="IQq-7Z-l1R"/>
                         <outlet property="exitButton" destination="0zV-3o-JQF" id="UZy-QK-8qF"/>
+                        <outlet property="newDescriptionTextField" destination="WD1-9J-aZv" id="IQq-7Z-l1R"/>
                         <outlet property="newWordLabel" destination="3Dg-nE-QHK" id="Ycs-LN-WlG"/>
                         <outlet property="newWorldTextField" destination="PD9-p7-vc7" id="cJb-Ai-jzr"/>
                         <outlet property="titleLabel" destination="yhG-Oh-1n3" id="q6T-0N-NEb"/>

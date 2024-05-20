@@ -8,6 +8,7 @@
 import Foundation
 
 class DataStorage {
+    
     static let shared = DataStorage()
 
     var newWordList: [String: String] = [
