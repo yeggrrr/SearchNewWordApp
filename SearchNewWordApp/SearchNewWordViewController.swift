@@ -8,7 +8,6 @@
 import UIKit
 
 class SearchNewWordViewController: UIViewController {
-    
     @IBOutlet var addBarButtonItem: UIBarButtonItem!
     
     @IBOutlet var textFieldView: UIView!
@@ -25,7 +24,14 @@ class SearchNewWordViewController: UIViewController {
     
     @IBOutlet var buttonsList: [UIButton]!
     
-    let shuffledWordList = DataStorage.shared.newWordList.keys.shuffled()
+    var shuffledWordList: [String] = []
+    
+    var descriptionText: String {
+        guard let key = searchTextField.text else { return "" }
+        guard !key.isEmpty else { return "뜻이 궁금한 신조어를 입력해보세요!" }
+        guard let value = DataStorage.shared.newWordList[key] else { return "일치하는 신조어가 없습니다." }
+        return value
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +40,6 @@ class SearchNewWordViewController: UIViewController {
     }
     
     func configureUI() {
-        
         title = "신조어 검색"
         
         // textFieldView
@@ -62,61 +67,39 @@ class SearchNewWordViewController: UIViewController {
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0
         
-        buttonsUI(newWordButton1, shuffledWordList[0])
-        buttonsUI(newWordButton2, shuffledWordList[1])
-        buttonsUI(newWordButton3, shuffledWordList[2])
-        buttonsUI(newWordButton4, shuffledWordList[3])
-        buttonsUI(newWordButton5, shuffledWordList[4])
-        
+        updateButton()
     }
     
-    func buttonsUI(_ button: UIButton, _ title: String) {
-        
-        button.setTitle(title, for: .normal)
-        button.tintColor = .black
-        button.titleLabel?.font = .systemFont(ofSize: 12)
-        button.backgroundColor = .clear
-        button.layer.cornerRadius = 5
-        button.layer.borderWidth = 1.5
-        button.layer.borderColor = UIColor.black.cgColor
+    func shuffled() {
+        shuffledWordList = DataStorage.shared.newWordList.keys.shuffled()
     }
     
-    func showButtonTitle() {
-        let shuffledWordList = DataStorage.shared.newWordList.keys.shuffled()
-        
-        newWordButton1.setTitle("\(shuffledWordList[0])", for: .normal)
-        newWordButton2.setTitle("\(shuffledWordList[1])", for: .normal)
-        newWordButton3.setTitle("\(shuffledWordList[2])", for: .normal)
-        newWordButton4.setTitle("\(shuffledWordList[3])", for: .normal)
-        newWordButton5.setTitle("\(shuffledWordList[4])", for: .normal)
+    func updateButton() {
+        shuffled()
+        for i in 0..<buttonsList.count {
+            let button = buttonsList[i]
+            let buttonTitle = shuffledWordList[i]
+            button.setUI(title: buttonTitle)
+            // buttonsUI(button, buttonTitle)
+            button.setTitle(buttonTitle, for: .normal)
+        }
     }
     
     @IBAction func buttonsClicked(_ sender: UIButton) {
-        
         guard let newWord = buttonsList[sender.tag].titleLabel?.text else { return }
         searchTextField.text = newWord
         
         let value = DataStorage.shared.newWordList[newWord]
         descriptionLabel.text = value
         searchTextField.endEditing(true)
-        showButtonTitle()
+        updateButton()
     }
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
-        guard let key = searchTextField.text else { return }
-        
-        if let value = DataStorage.shared.newWordList[key] {
-            descriptionLabel.text = value
-        } else if key == "" {
-            descriptionLabel.text = "뜻이 궁금한 신조어를 입력해보세요!"
-        } else {
-            descriptionLabel.text = "일치하는 신조어가 없습니다."
-        }
-        
+        descriptionLabel.text = descriptionText
         searchTextField.endEditing(true)
-        showButtonTitle()
+        updateButton()
     }
-
     
     @IBAction func textFieldClicked(_ sender: UITextField) {
         searchTextField.text = ""
@@ -126,3 +109,14 @@ class SearchNewWordViewController: UIViewController {
     }
 }
 
+extension UIButton {
+    func setUI(title: String) {
+        setTitle(title, for: .normal)
+        tintColor = .black
+        titleLabel?.font = .systemFont(ofSize: 12)
+        backgroundColor = .clear
+        layer.cornerRadius = 5
+        layer.borderWidth = 1.5
+        layer.borderColor = UIColor.black.cgColor
+    }
+}

@@ -8,7 +8,6 @@
 import UIKit
 
 class AddNewWordViewController: UIViewController {
-    
     @IBOutlet var exitButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var newWordLabel: UILabel!
@@ -24,7 +23,6 @@ class AddNewWordViewController: UIViewController {
     }
     
     func configureUI() {
-        
         view.backgroundColor = .systemGray
         
         // labelUI
@@ -79,17 +77,13 @@ class AddNewWordViewController: UIViewController {
     }
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
-        
         guard let newWord = self.newWorldTextField.text else { return }
         guard let newDescription = self.newDescriptionTextField.text else { return }
         
         if newWord.count >= 1 && newDescription.count >= 1 {
             DataStorage.shared.newWordList[newWord] = newDescription
-            
             alert("\(newWord): \(newDescription)", "추가되었습니다!")
- 
         } else {
-            
             alert("추가할 신조어를 입력해주세요!", "")
         }
         
