@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchNewWordViewController: UIViewController {
-
+    
     @IBOutlet var addBarButtonItem: UIBarButtonItem!
     
     @IBOutlet var textFieldView: UIView!
@@ -25,20 +25,12 @@ class SearchNewWordViewController: UIViewController {
     
     @IBOutlet var buttonsList: [UIButton]!
     
+    let shuffledWordList = DataStorage.shared.newWordList.keys.shuffled()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
-    }
-
-    func showButtonTitle() {
-        let shuffledWordList = DataStorage.shared.newWordList.keys.shuffled()
-        
-        newWordButton1.setTitle("\(shuffledWordList[0])", for: .normal)
-        newWordButton2.setTitle("\(shuffledWordList[1])", for: .normal)
-        newWordButton3.setTitle("\(shuffledWordList[2])", for: .normal)
-        newWordButton4.setTitle("\(shuffledWordList[3])", for: .normal)
-        newWordButton5.setTitle("\(shuffledWordList[4])", for: .normal)
     }
     
     func configureUI() {
@@ -70,13 +62,12 @@ class SearchNewWordViewController: UIViewController {
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0
         
-        // buttonUI
-        buttonsUI(newWordButton1, "1")
-        buttonsUI(newWordButton2, "2")
-        buttonsUI(newWordButton3, "3")
-        buttonsUI(newWordButton4, "4")
-        buttonsUI(newWordButton5, "5")
-
+        buttonsUI(newWordButton1, shuffledWordList[0])
+        buttonsUI(newWordButton2, shuffledWordList[1])
+        buttonsUI(newWordButton3, shuffledWordList[2])
+        buttonsUI(newWordButton4, shuffledWordList[3])
+        buttonsUI(newWordButton5, shuffledWordList[4])
+        
     }
     
     func buttonsUI(_ button: UIButton, _ title: String) {
@@ -90,9 +81,19 @@ class SearchNewWordViewController: UIViewController {
         button.layer.borderColor = UIColor.black.cgColor
     }
     
+    func showButtonTitle() {
+        let shuffledWordList = DataStorage.shared.newWordList.keys.shuffled()
+        
+        newWordButton1.setTitle("\(shuffledWordList[0])", for: .normal)
+        newWordButton2.setTitle("\(shuffledWordList[1])", for: .normal)
+        newWordButton3.setTitle("\(shuffledWordList[2])", for: .normal)
+        newWordButton4.setTitle("\(shuffledWordList[3])", for: .normal)
+        newWordButton5.setTitle("\(shuffledWordList[4])", for: .normal)
+    }
+    
     @IBAction func buttonsClicked(_ sender: UIButton) {
         
-        guard let newWord = newWordButton1.titleLabel?.text else { return }
+        guard let newWord = buttonsList[sender.tag].titleLabel?.text else { return }
         searchTextField.text = newWord
         
         let value = DataStorage.shared.newWordList[newWord]
@@ -113,17 +114,14 @@ class SearchNewWordViewController: UIViewController {
         }
         
         searchTextField.endEditing(true)
-        
-        let shuffledWordList = DataStorage.shared.newWordList.keys.shuffled()
-        let tag = shuffledWordList[sender.tag]
-        
-        buttonsList[sender.tag].setTitle("\(tag)", for: .normal)
+        showButtonTitle()
     }
+
     
     @IBAction func textFieldClicked(_ sender: UITextField) {
         searchTextField.text = ""
     }
-
+    
     @IBAction func didEndtextField(_ sender: UITextField) {
     }
 }
